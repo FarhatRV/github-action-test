@@ -28,7 +28,7 @@ jobs:
       run: cd ./java-101
 
     - name: Build with Gradle
-      run: pwd && gradle build  # Use 'mvn install' if maven
+      run: cd ./java-101 && pwd && ls -latr && gradle build  # Use 'mvn install' if maven
 
     - name: Run tests
-      run: ./gradlew test
+      run: cd ./java-101 && pwd && ls -latr && gradle test
