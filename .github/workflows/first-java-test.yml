@@ -24,11 +24,8 @@ jobs:
         distribution: 'temurin'
         architecture: x64
 
-    - name: Go to relevant directory
-      run: cd ./java-101
-
     - name: Build with Gradle
-      run: cd ./java-101 && pwd && ls -latr && gradle build  # Use 'mvn install' if maven
+      run: cd ./java-101 && gradle build  # Use 'mvn install' if maven
 
     - name: Run tests
-      run: cd ./java-101 && pwd && ls -latr && gradle test
+      run: cd ./java-101 && gradle test
