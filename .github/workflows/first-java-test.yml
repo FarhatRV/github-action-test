@@ -28,7 +28,7 @@ jobs:
       run: cd ./java-101
 
     - name: Build with Gradle
-      run: gradle build  # Use 'mvn install' if maven
+      run: ./gradlew build  # Use 'mvn install' if maven
 
     - name: Run tests
-      run: gradle test
+      run: ./gradlew test
