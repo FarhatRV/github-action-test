@@ -1,0 +1,28 @@
+name: Java CI
+
+on:
+  push:
+    branches:
+      - java-test
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17'  # Adjust the Java version as needed
+
+    - name: Go to relevant directory
+      run: cd ./java-101
+
+    - name: Build with Gradle
+      run: gradle build  # Use 'mvn install' if maven
+
+    - name: Run tests
+      run: gradle test
