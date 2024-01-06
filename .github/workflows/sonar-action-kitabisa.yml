@@ -45,6 +45,7 @@ jobs:
           args: >
             -Dsonar.verbose=true
             -Dsonar.projectKey=${{ secrets.KDUER_NAME }}-check
+            -Dsonar.java.binaries=/build/classes
       # - name: SonarQube Scan
       #   uses: kitabisa/sonarqube-action@master
       #   with:
