@@ -24,12 +24,14 @@ jobs:
         with:
           node-version: '16.x'
           cache: npm
+          cache-dependency-path: .github/actions-scripts/package-lock.json
 
       - name: Install dependencies
-        run: npm install octokit
+        run: npm install
+        working-directory: .github/actions-scripts/
 
       - name: Run script
         run: |
-          node .github/actions-scripts/use-the-api.mjs
+          node .github/actions-scripts/index.mjs
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}

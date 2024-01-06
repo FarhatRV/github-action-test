@@ -1,18 +1,18 @@
-import { Octokit } from "octokit"
+import { Octokit } from "octokit";
 
 const octokit = new Octokit({
   auth: process.env.TOKEN
 });
 
 try {
-  const result = await octokit.request("GET /repos/{owner}/{repo}/issues", {
+  const result = await octokit.rest.issues.createComment({
       owner: "FarhatRV",
       repo: "github-action-test",
+      issue_number: 4,
+      body: "PR for testing github issue comments."
     });
 
-  const titleAndAuthor = result.data.map(issue => {title: issue.title, authorID: issue.user.id})
-
-  console.log(titleAndAuthor)
+  console.log(result);
 
 } catch (error) {
   console.log(`Error! Status: ${error.status}. Message: ${error.response.data.message}`)
