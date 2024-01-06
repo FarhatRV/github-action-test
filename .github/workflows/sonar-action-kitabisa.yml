@@ -14,6 +14,10 @@ jobs:
         with:
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
+      - name: LS
+        run: ls -latr
+      - name: PWD
+        run: pwd
       - name: SonarQube Scan
         uses: kitabisa/sonarqube-action@master
         with:
