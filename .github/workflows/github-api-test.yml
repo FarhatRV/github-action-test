@@ -31,4 +31,10 @@ jobs:
         run: |
           node .github/actions-scripts/post-comment.js
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN_GITHUB }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_PROJECT_KEY: ${{ secrets.KDUER_NAME }}-maven-check
+          GITHUB_OWNER: ${{ secrets.USERNAME_GITHUB }}
+          GITHUB_REPO: ${{ secrets.REPO_NAME_GITHUB }}
+          PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
