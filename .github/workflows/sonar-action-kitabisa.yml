@@ -35,17 +35,17 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: cd java-101 && ./gradlew build
-      - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        with:
-          projectBaseDir: java-101/
-          args: >
-            -Dsonar.verbose=true
-            -Dsonar.projectKey=${{ secrets.KDUER_NAME }}-check
-            -Dsonar.java.binaries=/build/classes
+      # - name: SonarQube Scan
+      #   uses: sonarsource/sonarqube-scan-action@master
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      #   with:
+      #     projectBaseDir: java-101/
+      #     args: >
+      #       -Dsonar.verbose=true
+      #       -Dsonar.projectKey=${{ secrets.KDUER_NAME }}-check
+      #       -Dsonar.java.binaries=/build/classes
       # - name: SonarQube Scan
       #   uses: kitabisa/sonarqube-action@master
       #   with:
