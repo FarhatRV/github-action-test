@@ -1,12 +1,12 @@
 const axios = require("axios");
 
 // log all the env variables
-console.log(`GITHUB_TOKEN: ${process.env.GITHUB_TOKEN}`)
+console.log(`PERSONAL_ACCESS_TOKEN_GITHUB: ${process.env.PERSONAL_ACCESS_TOKEN_GITHUB}`)
 console.log(`SONAR_TOKEN: ${process.env.SONAR_TOKEN}`)
 console.log(`SONAR_HOST_URL: ${process.env.SONAR_HOST_URL}`)
 console.log(`SONAR_PROJECT_KEY: ${process.env.SONAR_PROJECT_KEY}`)
-console.log(`GITHUB_OWNER: ${process.env.GITHUB_OWNER}`)
-console.log(`GITHUB_REPO: ${process.env.GITHUB_REPO}`)
+console.log(`USERNAME_GITHUB: ${process.env.USERNAME_GITHUB}`)
+console.log(`REPO_NAME_GITHUB: ${process.env.REPO_NAME_GITHUB}`)
 console.log(`PULL_REQUEST_NUMBER: ${process.env.PULL_REQUEST_NUMBER}`)
 
 // SonarQube API details
@@ -29,12 +29,12 @@ const metricKeys = [
 const sonarToken = process.env.SONAR_TOKEN;
 
 // GitHub repository details
-const owner = process.env.GITHUB_OWNER;
-const repo = process.env.GITHUB_REPO;
+const owner = process.env.USERNAME_GITHUB;
+const repo = process.env.REPO_NAME_GITHUB;
 const issueNumber = process.env.PULL_REQUEST_NUMBER;
 
 // Personal access token with appropriate permissions
-const gitHubAccessToken = process.env.GITHUB_TOKEN;
+const gitHubAccessToken = process.env.PERSONAL_ACCESS_TOKEN_GITHUB;
 
 // Function to create a comment with a table of metrics on a GitHub issue
 async function createCommentWithMetricsTable(metrics) {
