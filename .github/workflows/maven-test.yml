@@ -1,4 +1,4 @@
-name: Java CI
+name: Maven test run
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
         architecture: x64
 
     - name: Build with Gradle
-      run: cd ./java-101 && gradle build  # Use 'mvn install' if maven
+      run: cd ./maven-project && mvn install  # Use 'gradle build' if gradle
 
     - name: Run tests
-      run: cd ./java-101 && gradle test
+      run: cd ./maven-project && mvn test
