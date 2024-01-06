@@ -20,4 +20,4 @@ jobs:
           host: ${{ secrets.SONAR_HOST_URL }}
           login: ${{ secrets.SONAR_TOKEN }}
           projectBaseDir: "java-101/src"
-          projectKey: ${{ secrets.KDUER_NAME }}-assignment
+          projectKey: ${{ secrets.KDUER_NAME }}
