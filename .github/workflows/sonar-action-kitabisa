@@ -1,0 +1,23 @@
+on:
+  # Trigger analysis when creating a pull request.
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+name: SonarQube Scan
+jobs:
+  sonarqube:
+    name: SonarQube Trigger
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out
+        uses: actions/checkout@master
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of reporting
+          fetch-depth: 0
+      - name: SonarQube Scan
+        uses: kitabisa/sonarqube-action@v1.2.0
+        with:
+          host: ${{ secrets.SONAR_HOST_URL }}
+          login: ${{ secrets.SONAR_TOKEN }}
+          projectBaseDir: "java-101/src"
+          projectKey: ${{ secrets.KDUER_NAME }}-assignment
