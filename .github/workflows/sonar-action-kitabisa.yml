@@ -19,5 +19,5 @@ jobs:
         with:
           host: ${{ secrets.SONAR_HOST_URL }}
           login: ${{ secrets.SONAR_TOKEN }}
-          projectBaseDir: "./java-101/src"
+          projectBaseDir: "github-action-test/java-101/src"
           projectKey: ${{ secrets.KDUER_NAME }}
