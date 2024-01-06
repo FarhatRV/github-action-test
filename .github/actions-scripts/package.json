@@ -9,6 +9,7 @@
   "author": "FarhatRV",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.5",
     "octokit": "^3.1.2"
   }
 }

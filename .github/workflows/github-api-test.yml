@@ -29,6 +29,6 @@ jobs:
 
       - name: Run script
         run: |
-          node .github/actions-scripts/index.mjs
+          node .github/actions-scripts/post-comment.js
         env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
