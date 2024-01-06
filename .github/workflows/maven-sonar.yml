@@ -1,4 +1,4 @@
-name: Sonar Analysis
+name: Maven Sonar Analysis
 on:
   push:
     branches:
@@ -28,7 +28,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: >
-          cd maven-project && mvn install sonar 
+          cd ./maven-project && mvn install sonar 
           -Dsonar.verbose=true 
           -Dsonar.projectKey=${{ secrets.KDUER_NAME }}-check 
           -Dsonar.projectName=${{ secrets.KDUER_NAME }}-check
