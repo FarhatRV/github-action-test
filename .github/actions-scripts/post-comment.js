@@ -1,5 +1,14 @@
 const axios = require("axios");
 
+// log all the env variables
+console.log(`GITHUB_TOKEN: ${process.env.GITHUB_TOKEN}`)
+console.log(`SONAR_TOKEN: ${process.env.SONAR_TOKEN}`)
+console.log(`SONAR_HOST_URL: ${process.env.SONAR_HOST_URL}`)
+console.log(`SONAR_PROJECT_KEY: ${process.env.SONAR_PROJECT_KEY}`)
+console.log(`GITHUB_OWNER: ${process.env.GITHUB_OWNER}`)
+console.log(`GITHUB_REPO: ${process.env.GITHUB_REPO}`)
+console.log(`PULL_REQUEST_NUMBER: ${process.env.PULL_REQUEST_NUMBER}`)
+
 // SonarQube API details
 const sonarqubeURL = `${process.env.SONAR_HOST_URL}/api`;
 const measuresEndpoint = `${sonarqubeURL}/measures/search`;
@@ -59,7 +68,7 @@ async function createCommentWithMetricsTable(metrics) {
   } catch (error) {
     console.error(
       "Error creating comment:",
-      error.response.data || error.message
+      error?.response?.data || error.message
     );
     throw error;
   }
@@ -91,7 +100,7 @@ async function fetchMetricsData() {
   } catch (error) {
     console.error(
       "Error fetching metrics data:",
-      error.response.data || error.message
+      error?.response?.data || error.message
     );
     throw error;
   }
