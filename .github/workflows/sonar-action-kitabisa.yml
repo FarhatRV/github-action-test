@@ -23,6 +23,7 @@ jobs:
           projectBaseDir: java-101/src
           args: >
             -Dsonar.verbose=true
+            -Dsonar.projectKey=${{ secrets.KDUER_NAME }}
       # - name: SonarQube Scan
       #   uses: kitabisa/sonarqube-action@master
       #   with:
