@@ -14,14 +14,19 @@ jobs:
         with:
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
-      - name: LS
-        run: ls -latr
-      - name: PWD
-        run: pwd
       - name: SonarQube Scan
-        uses: kitabisa/sonarqube-action@master
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
-          host: ${{ secrets.SONAR_HOST_URL }}
-          login: ${{ secrets.SONAR_TOKEN }}
-          projectBaseDir: "github-action-test/java-101/src"
-          projectKey: ${{ secrets.KDUER_NAME }}
+          projectBaseDir: java-101/src
+          args: >
+            -Dsonar.verbose=true
+      # - name: SonarQube Scan
+      #   uses: kitabisa/sonarqube-action@master
+      #   with:
+      #     host: ${{ secrets.SONAR_HOST_URL }}
+      #     login: ${{ secrets.SONAR_TOKEN }}
+      #     projectBaseDir: "github-action-test/java-101/src"
+      #     projectKey: ${{ secrets.KDUER_NAME }}
