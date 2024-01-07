@@ -5,6 +5,7 @@ package com.farhatrv;
 public class Main {
     public static void main(String[] args) {
 
+        String unusedString = "I'm unused";
         // sample
         String message = createMessage("New message");
         System.out.println(message);
