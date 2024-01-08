@@ -127,6 +127,7 @@ function getMetricValue(key, value) {
           break;
       }
       returnValue = returnValue + "<br/>Note: A being best, E being worst";
+      break;
     case `alert_status`:
       switch (value) {
         case "OK":
@@ -140,8 +141,8 @@ function getMetricValue(key, value) {
           returnValue = `<span style="background-color: yellow;font-weight: bolder;">${value}</span>`;
           break;
       }
-
       break;
+
     default:
       break;
   }
