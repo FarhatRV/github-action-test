@@ -83,23 +83,22 @@ function getMetricValue(key, value) {
   let returnValue = value;
   switch (key) {
     case `reliability_rating`:
-        switch (value + "") {
-            case "1.0":
-              returnValue = "A (0 Bugs)";
-              break;
-            case "2.0":
-              returnValue = "B (at least 1 Minor Bug)";
-              break;
-            case "3.0":
-              returnValue = "C (at least 1 Major Bug)";
-              break;
-            case "4.0":
-              returnValue = "D (at least 1 Critical Bug)";
-              break;
-            case "5.0":
-              returnValue = "E (at least 1 Blocker Bug)";
-              break;
-    
+      switch (value + "") {
+        case "1.0":
+          returnValue = "A (0 Bugs)";
+          break;
+        case "2.0":
+          returnValue = "B (at least 1 Minor Bug)";
+          break;
+        case "3.0":
+          returnValue = "C (at least 1 Major Bug)";
+          break;
+        case "4.0":
+          returnValue = "D (at least 1 Critical Bug)";
+          break;
+        case "5.0":
+          returnValue = "E (at least 1 Blocker Bug)";
+          break;
 
         default:
           break;
@@ -107,27 +106,41 @@ function getMetricValue(key, value) {
       returnValue = returnValue + "<br/>Note: A being best, E being worst";
       break;
     case `security_rating`:
-        switch (value + "") {
-            case "1.0":
-              returnValue = "A (0 Vulnerabilities)";
-              break;
-            case "2.0":
-              returnValue = "B (at least 1 Minor Vulnerability)";
-              break;
-            case "3.0":
-              returnValue = "C (at least 1 Major Vulnerability)";
-              break;
-            case "4.0":
-              returnValue = "D (at least 1 Critical Vulnerability)";
-              break;
-            case "5.0":
-              returnValue = "E (at least 1 Blocker Vulnerability)";
-              break;
-    
-            default:
-              break;
-          }
-          returnValue = returnValue + "<br/>Note: A being best, E being worst";
+      switch (value + "") {
+        case "1.0":
+          returnValue = "A (0 Vulnerabilities)";
+          break;
+        case "2.0":
+          returnValue = "B (at least 1 Minor Vulnerability)";
+          break;
+        case "3.0":
+          returnValue = "C (at least 1 Major Vulnerability)";
+          break;
+        case "4.0":
+          returnValue = "D (at least 1 Critical Vulnerability)";
+          break;
+        case "5.0":
+          returnValue = "E (at least 1 Blocker Vulnerability)";
+          break;
+
+        default:
+          break;
+      }
+      returnValue = returnValue + "<br/>Note: A being best, E being worst";
+    case `alert_status`:
+      switch (value) {
+        case "OK":
+          returnValue = `<span style="background-color: green;font-weight: bolder;">${value}</span>`;
+          break;
+        case "ERROR":
+          returnValue = `<span style="background-color: red;font-weight: bolder;">${value}</span>`;
+          break;
+
+        default:
+          returnValue = `<span style="background-color: yellow;font-weight: bolder;">${value}</span>`;
+          break;
+      }
+
       break;
     default:
       break;
