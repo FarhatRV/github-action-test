@@ -131,14 +131,14 @@ function getMetricValue(key, value) {
     case `alert_status`:
       switch (value) {
         case "OK":
-          returnValue = `<pre><b>:white_check_mark: ${value}</b></pre>`;
+          returnValue = `<b>:white_check_mark: ${value}</b>`;
           break;
         case "ERROR":
-          returnValue = `<pre><b>:x: ${value}</b></pre>`;
+          returnValue = `<b>:x: ${value}</b>`;
           break;
 
         default:
-          returnValue = `<pre><b>:warning: ${value}</b></pre>`;
+          returnValue = `<b>:warning: ${value}</b>`;
           break;
       }
       break;
