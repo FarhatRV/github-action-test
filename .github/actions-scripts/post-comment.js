@@ -131,14 +131,14 @@ function getMetricValue(key, value) {
     case `alert_status`:
       switch (value) {
         case "OK":
-          returnValue = `<span style="background-color: green;font-weight: bolder;">${value}</span>`;
+          returnValue = `<pre><span style="background-color: green;font-weight: bolder;">${value}</span></pre>`;
           break;
         case "ERROR":
-          returnValue = `<span style="background-color: red;font-weight: bolder;">${value}</span>`;
+          returnValue = `<pre><span style="background-color: red;font-weight: bolder;">${value}</span></pre>`;
           break;
 
         default:
-          returnValue = `<span style="background-color: yellow;font-weight: bolder;">${value}</span>`;
+          returnValue = `<pre><span style="background-color: yellow;font-weight: bolder;">${value}</span></pre>`;
           break;
       }
       break;
