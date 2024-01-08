@@ -129,7 +129,7 @@ function getMetricValue(key, value) {
       returnValue = returnValue + "<br/>Note: A being best, E being worst";
       break;
     case `alert_status`:
-      returnValue = `<pre><b>${value}</b></pre>`;
+      returnValue = `<b style="color:green">${value}</b>`;
       break;
 
     default:
