@@ -129,7 +129,18 @@ function getMetricValue(key, value) {
       returnValue = returnValue + "<br/>Note: A being best, E being worst";
       break;
     case `alert_status`:
-      returnValue = `<b style="color:green">${value}</b>`;
+      switch (value) {
+        case "OK":
+          returnValue = `<pre><b>:white_check_mark: ${value}</b></pre>`;
+          break;
+        case "ERROR":
+          returnValue = `<pre><b>:x: ${value}</b></pre>`;
+          break;
+
+        default:
+          returnValue = `<pre><b>:warning: ${value}</b></pre>`;
+          break;
+      }
       break;
 
     default:
