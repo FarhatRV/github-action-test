@@ -104,7 +104,7 @@ function getMetricValue(key, value) {
         default:
           break;
       }
-      returnValue = returnValue + " Note: A being best, E being worst";
+      returnValue = returnValue + "<br/>Note: A being best, E being worst";
       break;
     case `security_rating`:
         switch (value + "") {
@@ -127,7 +127,7 @@ function getMetricValue(key, value) {
             default:
               break;
           }
-          returnValue = returnValue + " Note: A being best, E being worst";
+          returnValue = returnValue + "<br/>Note: A being best, E being worst";
       break;
     default:
       break;
