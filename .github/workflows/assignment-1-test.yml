@@ -1,4 +1,4 @@
-name: Maven test run
+name: Assignment 1 workflow
 
 on:
   push:
@@ -22,8 +22,8 @@ jobs:
           distribution: 'temurin'
           architecture: x64
 
-      - name: Build with Gradle
-        run: cd ./assignment-1 && mvn clean
+      - name: Build with Maven
+        run: cd ./assignment-1 && mvn clean install
 
       - name: Run tests
-        run: cd ./assignment-1 && mvn install
+        run: cd ./assignment-1 && mvn test
